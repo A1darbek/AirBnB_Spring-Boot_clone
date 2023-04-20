@@ -1,0 +1,42 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Iv1.e96add9c96ef3eea
+            client-secret: aa80a4d07add06f860ad4e93ce1ff5910e7c730a
+  datasource:
+    url: jdbc:postgresql://localhost:5432/profile
+    username: ayderbek
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+  servlet:
+    multipart:
+      max-file-size: 50MB
+logging:
+  level:
+    org.springframework.security: debug
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 60000 # 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+
+#twilio:
+#  accountSid: AC7836b8c09a746fc5bc7c194e6db972c4
+#  authToken: a2fbd2bc3306fb1b9cc886c27b221ca4
+#  fromPhoneNumber: +13802217641
+Stripe:
+  apiKey: "sk_test_51Mw5tJJKTt1wmidr6EXEnOvCOGiTNl0tXBMvQjnzSi4Zet5XnORYNGAeJGlQz6egOX0MC6PrcEvAE9lo25by7DPq00Rl5QETfV"
